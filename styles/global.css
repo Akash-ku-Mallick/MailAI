@@ -1,0 +1,10 @@
+.floating-container {
+    position: fixed;
+    z-index: 2147483647;
+    top: 0;
+    right: 0;
+    fill-opacity: 100%;
+    font-size: larger;
+    width: fit-content;
+}
+

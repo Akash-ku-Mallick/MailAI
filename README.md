@@ -1,33 +1,36 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+<h1 align="center">Mail-AI</h1>
+<h2 align="center">Hi 👋, I'm Akash Kumar Mallick</h2>
+<h3 align="center">IF you want a Front-end and Mobile App Developer skilled in Figma, API integration, and Flutter, then I an Akash Kumar. I easily understands client needs to deliver effective solutions.</h3>
+<h2>Idea</h2>
+<p>The idea to form the project came from this Python code. Here, I applied openai API calls to get reply of a prompt</p>
 
-## Getting Started
+```python
+  import openai 
+  def prmt_input(name, recruiter=input("recruiter's name : ")
+               , company_name=input("company name : ")
+               , word_count=input("word count : ")
+               , position=input("Enter position : ")
+               , skills_required=input("Skills they required : ")
+               , skills_i_have=input("Skills I have : ")) -> str:
+    prmt = "I want you to write a message to " + recruiter + " for applying into " \
+           + company_name + " for the " + position + ". They are looking for " \
+           + skills_required + ". I am " + name + " an I bring " \
+           + skills_i_have + " to the table. Write it under " + word_count + " words."
+    return prmt
 
-First, run the development server:
 
-```bash
-pnpm dev
-# or
-npm run dev
+def fun():
+    openai.api_key = "-------Your Api Key--------"
+    you = input("Enter your name : ")
+    prompt = prmt_input(you)
+    chat_res = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}])
+    print(chat_res.choices[0].message.content)
+
+
+if __name__ == "__main__":
+    fun()
 ```
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+<h2 align="center">OUTPUT</h2>
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
-
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
-
-## Making production build
-
-Run the following:
-
-```bash
-pnpm build
-# or
-npm run build
-```
-
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
-
-## Submit to the webstores
-
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+![09 05 2023_19 43 21_REC](https://github.com/Akash-ku-Mallick/MailAI/assets/99015782/5b268da6-bf3d-4f66-826b-36413564730d)
