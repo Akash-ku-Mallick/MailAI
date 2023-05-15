@@ -32,6 +32,5 @@ if __name__ == "__main__":
 ```
 
 <h2 align="center">OUTPUT</h2>
-
 ![09 05 2023_19 43 21_REC](https://github.com/Akash-ku-Mallick/MailAI/assets/99015782/d35b4b3f-88f9-4199-b0ad-c86ecebb4538)
 
