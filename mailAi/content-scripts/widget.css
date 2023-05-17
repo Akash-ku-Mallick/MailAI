@@ -1,0 +1,12 @@
+#miniWidgetMailAi {
+    position: fixed;
+    /* temporary attributes*/
+    background-color: rgba(62, 96, 91, 0.492); 
+    visibility: visible;
+    bottom: 0; right: 0;
+    margin-bottom: 5px; margin-right: 5px;
+}
+::after {
+    transform: translateY();
+    animation-name: inherit;
+}

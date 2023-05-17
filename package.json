@@ -1,0 +1,51 @@
+{
+  "name": "mail-ai",
+  "displayName": "Mail ai",
+  "version": "0.0.1",
+  "description": "// TODO",
+  "author": "Akash-Ku-Mallick",
+  "packageManager": "npm@9.6.2",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "@plasmohq/chrome-webstore-api": "^2.8.1",
+    "@plasmohq/mystic-box": "^1.4.0",
+    "@plasmohq/parcel-bundler": "^0.4.9",
+    "@plasmohq/parcel-transformer-manifest": "^0.14.6",
+    "@plasmohq/permission-ui": "^0.2.5",
+    "@plasmohq/rps": "^1.8.5",
+    "axios": "^1.4.0",
+    "bip39": "^3.1.0",
+    "plasmo": "^0.70.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.4",
+    "@types/chrome": "0.0.227",
+    "@types/node": "18.15.11",
+    "@types/react": "^18.0.32",
+    "@types/react-dom": "^18.2.4",
+    "prettier": "2.8.7",
+    "typescript": "5.0.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://*/*"
+    ],
+    "permissions": [
+      "tabs"
+    ],
+    "commands": {
+      "test": {
+        "suggested_key": {
+          "default": "Alt+W"
+        },
+        "description": "Open the extension Script popup"
+      }
+    }
+  }
+}
