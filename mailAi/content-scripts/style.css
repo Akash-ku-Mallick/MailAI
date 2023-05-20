@@ -1,0 +1,177 @@
+.PopupBox {
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  padding: 10px;
+  padding-bottom: 0px;
+  position: fixed;
+  width: 371px;
+  height: 549px;
+  right: 0;
+  bottom: 0;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #000000;
+
+  background: linear-gradient(180deg, rgba(188, 46, 255, 0.2) 0%, rgba(95, 133, 14, 0.2) 100%), linear-gradient(180deg, rgba(60, 130, 152, 0.897907) 0%, #3A7A8E 100%);
+  border-radius: 13px 13px 10px 10px;
+}
+
+.topBar {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  row-gap: 40px;
+  isolation: isolate;
+
+  position: absolute;
+  width: 371px;
+  height: 54px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(180deg, rgba(175, 175, 175, 0.5) 0%, rgba(185, 185, 185, 0) 100%);
+
+  border-radius: 13px 13px 0px 0px;
+}
+
+.ChatFrame {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0px 17px 10px;
+  gap: 17px;
+
+  position: absolute;
+  width: 335px;
+  height: 387px;
+  left: 1;
+  top: 54px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: rgba(11, 107, 55, 0.13);
+}
+
+
+.RoboChat {
+
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2px 5px;
+  gap: 15px;
+
+  position: absolute;
+  width: 235px;
+  height: 42px;
+  left: 0;
+  /* top: 0px; */
+}
+
+.bot-Text-Div {
+
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 3px 10px;
+  gap: 10px;
+
+  width: 172px;
+  height: 36px;
+
+  background: #5A6966;
+  border-radius: 0px 3px 3px 0px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.bot-Text {
+  width: 152px;
+  height: 30px;
+
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+
+  color: #FFFFFF;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.bot-icon {
+  width: 38px;
+  height: 38px;
+
+  background: linear-gradient(322.88deg, #474141 15.22%, #A082D1 15.23%, rgba(250, 250, 250, 0) 44.63%, rgba(102, 252, 252, 0.79) 102.39%);
+  border-radius: 15px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.copyIcon {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 2px;
+  bottom: 10px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+  background-color: #5f31a800;
+  border-radius: 3px;
+}
+.copyIcon:hover{
+  fill:rgba(102, 252, 252, 0.79);
+  background-color: rgba(50, 50, 50, 0.277);
+}
+
+
+
+.MiniBar {
+  position: fixed;
+  width: 371px;
+  height: 54px;
+  bottom: 0px;
+  right: 0px;
+  margin: 5px;
+  padding-block: 2px;
+  padding-inline: 12px;
+  justify-items: center;
+  background-color: rgb(16, 49, 38);
+  text-anchor: middle;
+  border-radius: 10px;
+  font-size: 300%;
+}

@@ -19,6 +19,7 @@
     "@plasmohq/rps": "^1.8.5",
     "axios": "^1.4.0",
     "bip39": "^3.1.0",
+    "devtools-protocol": "^0.0.1146363",
     "plasmo": "^0.70.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
