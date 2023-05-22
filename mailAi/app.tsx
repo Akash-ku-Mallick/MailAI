@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import Page2Main from "./content-scripts/Page2";
-import { ChatUI, PromptBar } from "./content-scripts/chat-ui";
 // import  { stopElementSelection, start} from  './content-scripts/Inspect'
-
+import { SuggestionsBox } from './content-scripts/widget'
+import { CopyIcon } from './content-scripts/widget'
 
 
 import "./content-scripts/style.css";
@@ -25,10 +25,11 @@ export const App = () => {
 
   function MiniBar() {
     return (
-      <div className="MiniBar" onClick={() => { ChangeState(!curState)}} >
-        <button role="button" style={{left: 0}}>
+      <div className="MiniBar" >
+        <button role="button" onClick={() => { ChangeState(!curState)}}>
           <span className="text">Welcom to MailAI</span>
         </button>
+        <SuggestionsBox />
       </div>
     )
   }
@@ -51,29 +52,68 @@ export const App = () => {
     )
   }
 
-  function Sugestions(prop) {
-    return <button className="suggestions">{prop}</button>
-  }
 
-  function suggestionsBox() {
-    const sgs1 = "Sgs111111111111111"
-    const sgs2 = "Sgs22222222222222221"
-    const sgs3 = "Sgs33333333331111111"
-    const sgs = [sgs1, sgs2, sgs3]
-    return (
-      <div
-        className="suggestionsBox"
-        style={{ display: "flex", flexDirection: "row" }}>
-        {sgs.map(Sugestions)}
-      </div>
-    )
-  }
 
   // Main Element
  return <div id="mailAi-App" >{curState ? <MiniBar /> : <BigBox />}</div>
 }
 
-  
+const PromptBar = () => {
+  const [hiddenBarStatus, hiddenBarOption] = useState(true);
+
+  const HiddenBar = () => {
+      return ( <div>
+          <button>Grab</button>
+          <button>Auto Select</button>
+      </div>)
+      }
+
+  return(
+      <div id="promptBar" className="promptBar">
+          
+          <div className="PromptInput">
+              <textarea></textarea>
+              <button>{"=>"}</button>
+          </div>
+          {hiddenBarStatus && <HiddenBar />}
+          <button onClick={()=>{hiddenBarOption(!hiddenBarStatus)}}>exp</button>
+      </div>
+  )
+  // ADD Sugestion-Box and Button to drop-down options for Grab-from-page 
+}
+
+var BotReply:string = "Hi How may I help you !"
+  const MessageUi = () => {
+      return(
+          <div className="RoboChat">
+              <div className="bot-icon"></div>
+              <div className="bot-Text-Div">
+                  <p className="bot-Text"> {BotReply+'afsdfbguvryruutytrvybtyutbbyutubtiu'} </p>
+                  <button className="copyIcon" ><CopyIcon /></button>
+              </div>
+          </div>
+      )
+  }
+  const ComandUi = () => {
+      return(
+          <div className="ComandUi">
+              <div className="bot-Text-Div" style={{order: 0}}>
+                  <p className="bot-Text"> {BotReply+'2 gggggtjjjj ggggggggggg fdddddddddd sgrhabth'} </p>
+                  <button className="copyIcon" ><CopyIcon /></button>
+              </div>
+              <div className="bot-icon" style={{order: 2}}></div>
+          </div>
+      )
+  }
+
+export function ChatUI () {
+  return(
+      <div className="ChatFrame" style={{order: 2}}>
+          <MessageUi />
+          <ComandUi />
+      </div>
+  )
+}
 
 export default App
 

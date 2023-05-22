@@ -76,7 +76,7 @@ export const render: PlasmoRender<PlasmoCSUIJSXContainer> = async ({createRootCo
     const rootContainer = await createRootContainer({type: "overlay", element: document.body})
     const root = createRoot(rootContainer)
     // as the @typescript/react-dom file don not have ReactDom.createRoot we are using first line of code
-    root.render(<div style={{position: "fixed", right: 0, height: 0, width: 0}}> </div>)
+    root.render(<div style={{position: "fixed", right: 0, height: 0, width: 0}}></div>)
     console.log(">>>>>----exit rendererr--")
   }
 

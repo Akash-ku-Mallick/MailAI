@@ -1,3 +1,6 @@
+
+
+
 .PopupBox {
   box-sizing: border-box;
   margin-bottom: 5px;
@@ -5,21 +8,27 @@
   padding: 10px;
   padding-bottom: 0px;
   position: fixed;
-  width: 371px;
-  height: 549px;
+  width: 35vw;
+  height: 70vh;
+  min-width: 400px;
+  min-height: 550px;
   right: 0;
   bottom: 0;
   border-width: 1px 1px 1px 1px;
   border-style: solid;
   border-color: #000000;
+  display: flex;
 
-  background: linear-gradient(180deg, rgba(188, 46, 255, 0.2) 0%, rgba(95, 133, 14, 0.2) 100%), linear-gradient(180deg, rgba(60, 130, 152, 0.897907) 0%, #3A7A8E 100%);
+  background: linear-gradient(180deg, rgba(188, 46, 255, 0.2) 0%, rgba(95, 133, 14, 0.2) 100%), linear-gradient(180deg, rgba(58, 124, 144, 0.898) 0%, #3A7A8E 100%);
   border-radius: 13px 13px 10px 10px;
 }
 
+
+
+
 .topBar {
   box-sizing: border-box;
-
+ 
   /* Auto layout */
 
   display: flex;
@@ -31,7 +40,7 @@
   isolation: isolate;
 
   position: absolute;
-  width: 371px;
+  width: 100%;
   height: 54px;
   left: 0px;
   top: 0px;
@@ -52,12 +61,13 @@
   gap: 17px;
 
   position: absolute;
-  width: 335px;
+  width: 100%;
   height: 387px;
   left: 1;
   top: 54px;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: all 1s ease;
 
   background: rgba(11, 107, 55, 0.13);
 }
@@ -74,7 +84,7 @@
   padding: 2px 5px;
   gap: 15px;
 
-  position: absolute;
+  position: relative;
   width: 235px;
   height: 42px;
   left: 0;
@@ -86,14 +96,12 @@
 
   /* Auto layout */
 
-  display: flex;
+  display: inline-block;
   flex-direction: row;
   align-items: flex-start;
   padding: 3px 10px;
   gap: 10px;
 
-  width: 172px;
-  height: 36px;
 
   background: #5A6966;
   border-radius: 0px 3px 3px 0px;
@@ -102,18 +110,21 @@
 
   flex: none;
   order: 1;
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
 .bot-Text {
   width: 152px;
   height: 30px;
+  max-width: 70%;
 
   font-family: 'Consolas';
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
+  word-wrap: break-word;
+  max-width: 200px;
 
   color: #FFFFFF;
 
@@ -141,21 +152,38 @@
 
 .copyIcon {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   right: 2px;
   bottom: 10px;
   /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
   z-index: 1;
   background-color: #5f31a800;
   border-radius: 3px;
+  padding: 0; margin: 0;
+  border: 0;
 }
 .copyIcon:hover{
-  fill:rgba(102, 252, 252, 0.79);
   background-color: rgba(50, 50, 50, 0.277);
+  transform: scale3d(2);
+}
+
+.InputChat {
+
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2px 5px;
+  gap: 15px;
+
+  position: relative;
+  width: 235px;
+  height: 42px;
+  left: 0;
+  /* top: 0px; */
 }
 
 
@@ -163,9 +191,9 @@
 .MiniBar {
   position: fixed;
   width: 371px;
-  height: 54px;
-  bottom: 0px;
-  right: 0px;
+  height: 50px;
+  bottom: 10px;
+  right: 10px;
   margin: 5px;
   padding-block: 2px;
   padding-inline: 12px;
@@ -173,5 +201,88 @@
   background-color: rgb(16, 49, 38);
   text-anchor: middle;
   border-radius: 10px;
-  font-size: 300%;
+
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.promptBar {
+  display: flexbox;
+  position: absolute;
+  bottom: 0;
+  flex-grow: 1;
+  z-index: 2;
+
+  width: 100%;
+}
+
+.hiddenBar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+}
+
+.PromptInput {
+  position: relative;
+}
+
+.PromptInput > textarea {
+  min-height: 5vh;
+  max-height: 10vh;
+  width: 80%;
+  background-color: inherit;
+}
+
+
+.PromptInput > button {
+  position: absolute;
+  right: 0;
+  margin-left: 1vw;
+  height: 2vh;
+  width: 5vw;
+  margin-right: 3vw;
+}
+.PromptInput > button:hover{
+  background-color: #439887;
+}
+
+.promptBar > button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 3vw;
+
+  height: 2vh;
+  width: 5vw;
+}
+
+.promptBar > button:hover{
+  background-color: #f59c0d;
+}
+
+
+/* :-webkit-scrollbar {
+  display: flow-root;
+} */
+
+.ComandUi {
+
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 2px 5px;
+  gap: 15px;
+
+  position: relative;
+  width: 235px;
+  height: 42px;
+  right: 0;
+  /* top: 0px; */
 }
